@@ -7,4 +7,4 @@ RoboticArm_Control is a VB.net-based project dedicated to developing advanced co
 To get started with the RoboticArm_Control project, follow these steps:
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/RoboticArm_Control.git
+   git clone https://github.com/Thevi99/RoboticArm_Control.git
