@@ -9,9 +9,30 @@
 
         MsgBox(x)
         MsgBox(&HF + &HA)
-        
+
+        MsgBox(StrToDeg(HecToStr(&HF, &HA)))
+
+
     End Sub
 
+
+    Private Function HecToStr(ByVal h1, ByVal h2)
+        Dim s As String
+        Dim j1 As String = Convert.ToString(h1, 16)
+        Dim j2 As String = Convert.ToString(h2, 16)
+
+        If j1.Length = 1 Then j1 = "0" + j1
+        If j2.Length = 1 Then j2 = "0" + j2
+        s = "&H" + j1 + j2
+
+        Return s
+
+    End Function
+
+    Private Function StrToDeg(ByVal h As String)
+        Dim t As Integer = CInt(h) / 19.25 * 1.8
+        Return t
+    End Function
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If SP.IsOpen Then SP.Close()
         SP.PortName = ComboBox1.SelectedItem
