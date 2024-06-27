@@ -4,6 +4,12 @@
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim sData As String() = IO.Ports.SerialPort.GetPortNames
         ComboBox1.Items.AddRange(sData)
+
+        Dim x As Integer = CInt("&H" + "0F0A") / 19.25 * 1.8
+
+        MsgBox(x)
+        MsgBox(&HF + &HA)
+        
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
