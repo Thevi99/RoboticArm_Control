@@ -1,0 +1,12 @@
+D:\Internship\RoboticArm\obj\Debug\RoboticArm.vbproj.AssemblyReference.cache
+D:\Internship\RoboticArm\obj\Debug\RoboticArm.frmMain.resources
+D:\Internship\RoboticArm\obj\Debug\RoboticArm.Resources.resources
+D:\Internship\RoboticArm\obj\Debug\RoboticArm.vbproj.GenerateResource.cache
+D:\Internship\RoboticArm\obj\Debug\RoboticArm.vbproj.CoreCompileInputs.cache
+D:\Internship\RoboticArm\bin\Debug\RoboticArm.exe.config
+D:\Internship\RoboticArm\bin\Debug\RoboticArm.exe
+D:\Internship\RoboticArm\bin\Debug\RoboticArm.pdb
+D:\Internship\RoboticArm\bin\Debug\RoboticArm.xml
+D:\Internship\RoboticArm\obj\Debug\RoboticArm.exe
+D:\Internship\RoboticArm\obj\Debug\RoboticArm.xml
+D:\Internship\RoboticArm\obj\Debug\RoboticArm.pdb
