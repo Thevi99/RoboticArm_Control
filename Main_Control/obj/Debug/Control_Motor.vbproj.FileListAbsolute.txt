@@ -1,0 +1,12 @@
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\bin\Debug\Control_Motor.exe.config
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\bin\Debug\Control_Motor.exe
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\bin\Debug\Control_Motor.pdb
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\bin\Debug\Control_Motor.xml
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\obj\Debug\Control_Motor.vbproj.AssemblyReference.cache
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\obj\Debug\Control_Motor.Form1.resources
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\obj\Debug\Control_Motor.Resources.resources
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\obj\Debug\Control_Motor.vbproj.GenerateResource.cache
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\obj\Debug\Control_Motor.vbproj.CoreCompileInputs.cache
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\obj\Debug\Control_Motor.exe
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\obj\Debug\Control_Motor.xml
+C:\Users\ray\source\repos\Control_Motor\Control_Motor\obj\Debug\Control_Motor.pdb
