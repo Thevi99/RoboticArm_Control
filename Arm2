@@ -1,0 +1,70 @@
+Public Class FrmMotionControl
+    Dim SP As New System.IO.Ports.SerialPort
+    Dim iPos As Integer
+    Private Sub FrmMotionControl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim sItem As String() = System.IO.Ports.SerialPort.GetPortNames
+        ComboBox1.Items.AddRange(sItem)
+    End Sub
+
+    Private Function DegToPulse(ByVal d As Integer)
+        Dim p As Integer
+        p = d / 1.8 * 19
+        Return p
+    End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If SP.IsOpen() Then SP.Close()
+        SP.PortName = ComboBox1.SelectedItem
+        SP.BaudRate = 38400
+        SP.DataBits = 8
+        SP.StopBits = 1
+        SP.Parity = IO.Ports.Parity.None
+
+        SP.Open()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        iPos += DegToPulse(Jog.Value)
+        MotionMove(True, DegToPulse(Jog.Value))
+        lbPosition.Text = iPos
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        iPos -= DegToPulse(Jog.Value)
+        MotionMove(False, DegToPulse(Jog.Value))
+        lbPosition.Text = iPos
+    End Sub
+
+    Private Sub MotionMove(DIR_CW As Boolean, Pos As Integer)
+        Dim byteTX(10) As Byte
+        Dim bytePos As Byte() = BitConverter.GetBytes(Pos)
+
+
+        byteTX(0) = &HFA    '####### Header
+        byteTX(1) = &H1     '####### Address
+        byteTX(2) = &HFD    '####### Function code    (F6=Position mode)
+        'byteTX(3) = (DIR_CW * &H80) And &H1    '####### DIR,Rev,Speed
+        byteTX(3) = &H1
+        byteTX(3) += IIf(DIR_CW, &H80, 0)
+        byteTX(4) = &H40    '####### Speed
+        byteTX(5) = &H2     '####### Acc
+        byteTX(6) = bytePos(3)         '####### Pluse
+        byteTX(7) = bytePos(2)         '####### Pluse
+        byteTX(8) = bytePos(1)    '####### Pluse
+        byteTX(9) = bytePos(0)     '####### Pluse
+        byteTX(10) = CRC_Checksum(byteTX)  '####### CRC Checksum
+
+        If SP.IsOpen Then
+            SP.Write(byteTX, 0, byteTX.Length)
+        End If
+    End Sub
+
+    Private Function CRC_Checksum(byteData As Byte()) As Byte
+        Dim byteSum As Integer = 0
+        For i = 0 To byteData.Length - 2
+            byteSum += byteData(i)
+        Next
+
+        Return (byteSum Mod &H100)
+    End Function
+End Class
